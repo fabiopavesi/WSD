@@ -1,0 +1,11 @@
+FROM node:10-alpine
+
+COPY server /app
+COPY common /common
+
+WORKDIR /app
+RUN npm i
+
+EXPOSE 9898
+
+CMD ["node", "/app/ws-transport.js"]
